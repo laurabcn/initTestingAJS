@@ -1,0 +1,78 @@
+<div class="container"  ng-controller="FavouriteController as fc">
+
+  <!--div>
+    <acme-navbar creation-date="main.creationDate"></acme-navbar>
+  </div-->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <img src="assets/images/img_logo_header.png" alt="wallapop" title="wallapop" height="32">
+    <div class="container text-center">
+      <form ng-submit="main.searchData()" name="formSearch" class="form-inline">
+        <div class="form-group">
+
+          <ui-select
+            multiple
+            ng-model="main.selectSearch"
+            name="selectCategory"
+            theme="bootstrap"
+            close-on-select="false"
+            title="Choose a field search"
+            class="text-uppercase text-right"
+            ng-change="main.submitSearch()">
+            <ui-select-match placeholder="Filtros">{{$item}}</ui-select-match>
+            <ui-select-choices repeat="field in main.selectCategory" class="text-capitalize text-right">
+              {{field}}
+            </ui-select-choices>
+          </ui-select>
+          <div class="input-group w500">
+            <i class="fa fa-search fa-2x"></i>
+            <input type="text" class="form-control" ng-model="main.wordSearch" ng-change="main.submitSearch()">
+          </div>
+          <i class="fa fa-heartbeat fa-4x pull-right"
+             ng-if="fc.listFavorites.length > 0"
+             ng-click="fc.showModal()"></i>
+        </div>
+      </form>
+
+    </div>
+  </nav>
+  <div class="row" ng-show="main.filteredItems.length>0">
+    <div class="col-lg-4"
+         ng-repeat="awesomeThing in main.filteredItems"
+         ng-class="{'col-sm-offset-1' : $last }">
+      <div class="panel-image">
+        <img class="img-fluid img-thumbnail center-block"
+             ng-src="assets/images/{{ awesomeThing.image }}"
+             alt="{{ awesomeThing.title }}" title="{{ awesomeThing.title }}">
+      </div>
+      <favourite-item
+        index="awesomeThing.id"
+        list-fav="fc.listFavorites"
+        is-fav="fc.isInList(awesomeThing.id)">
+      </favourite-item>
+      <div class="panel-body buffer">
+          <h4>{{ awesomeThing.title }}</h4>
+          <p class="text-muted">{{ awesomeThing.description }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="text-center">
+      <uib-pagination
+        boundary-links="true"
+        total-items="main.awesomeThings.length"
+        items-per-page="main.maxSize"
+        ng-model="main.currentPage"
+        class="pagination-sm text-center"
+        ng-change="main.pageChanged()"
+        previous-text="&lsaquo;"
+        next-text="&rsaquo;"
+        first-text="&laquo;"
+        last-text="&raquo;"></uib-pagination>
+    </div>
+  </div>
+  <div class="row" ng-show="main.filteredItems.length === 0">
+    <div class="container text-center">
+      <i class="fa fa-bell" aria-hidden="true"></i>
+      <span>OOOHHH VAYA!! No results</span>
+    </div>
+</div>

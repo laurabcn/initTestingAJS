@@ -1,0 +1,28 @@
+<div class="modal-header text-right">
+  <span ng-click="$close()">X</span>
+</div>
+<div class="modalFav modal-body">
+  <div class="showItem">
+      <span class="text-capitalize">{{ModFav.searchData[0].title}}</span>
+    <img class="img-fluid img-thumbnail"
+       ng-src="assets/images/{{ ModFav.searchData[0].image }}"
+       alt="{{ ModFav.searchData[0].title }}" title = "{{ ModFav.items.title }}">
+    <p class="text-muted text-capitalize">{{ModFav.items.description}}</p>
+  </div>
+  <div class="showList">
+    <div class="formSearch">
+      <form name="searchFavourite">
+        <i class="fa fa-search"></i>
+        <input type="text" ng-model="ModFav.wordSearchFav" ng-change="ModFav.searchFav()">
+      </form>
+    </div>
+    <div>
+      <ul ng-repeat="fav in ModFav.searchData" class="list-group">
+        <li class="list-group-item">
+          <span>{{fav.title}}</span>
+          <i class="fa fa-heart pull-right" ng-click="ModFav.removeOnList(fav.id)"></i>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

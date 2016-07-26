@@ -1,0 +1,40 @@
+.modalFav{
+  .showItem, .showList{
+    display: inline-block;
+    width:49%;
+    vertical-align: top;
+  }
+  span{
+    margin-left: 5px;
+  }
+  p{
+    padding: 10px;
+  }
+  i{
+    cursor: pointer;
+  }
+  .showItem{
+    i{
+      margin-right: 10px;
+    }
+  }
+  .showList{
+    .formSearch{
+      background: #13c1ac;
+      padding: 15px 0;
+      margin-top: 5px;
+      position: relative;
+      input{
+        width: 100%;
+        text-indent: 40px;
+      }
+      .fa{
+        left: 7px;
+        top: 18px;
+        font-size: 1.5em;
+        position: absolute;
+        color: #fff;
+      }
+    }
+  }
+}

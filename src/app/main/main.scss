@@ -1,0 +1,107 @@
+.navbar{
+  background-color: #c1c1c1;
+  padding: 11px;
+  input{
+    min-width: 140px;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    text-indent: 20px;
+    &:focus{
+      border-left: none!important;
+      border-right: none!important;
+      border-top: none!important;
+      box-shadow: none;
+    }
+  }
+  .fa{
+    color: white;
+    position: absolute;
+    top: 7px;
+    &.fa-heart{
+      color: $color-main;
+      &:hover{
+        @extend .fa-heart-o;
+      }
+    }
+    &.fa-heart-o{
+      color: $color-main;
+      &:hover{
+        color: red;
+      }
+    }
+    &.fa-search{
+      left: 0;
+    }
+    &.fa-heartbeat{
+      right: 350px;
+    }
+  }
+  .container{
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .ui-select-multiple {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    cursor: pointer!important;
+  }
+  .ui-select-match-item{
+    border: 1px solid $color-main!important;
+    color: $color-main!important;
+  }
+  .btn-primary{
+    background: #fff!important;
+  }
+  .ui-select-bootstrap.ui-select-bootstrap{
+    .ui-select-choices-row.active{
+      a{
+        background: $color-main-dark;
+      }
+    }
+  }
+}
+.pagination{
+  li{
+    a{
+      border: none!important;
+      color: $color-grey;
+      &:hover{
+        background: transparent;
+        color: $color-main;
+      }
+    }
+  }
+  .pagination-last, .pagination-next, .pagination-first, .pagination-prev{
+    a{
+      color: $color-main;
+    }
+  }
+  .disabled{
+    a{
+      color: #b5b5b5;
+    }
+  }
+  .active{
+    a{
+      color: $color-main!important;
+      background-color: transparent!important;
+      border: none;
+    }
+  }
+}
+
+.buffer{
+  padding: 5px 35px;
+}
+
+.w500{
+  width: 500px;
+}
+
+.fav-position{
+  position: absolute;
+  top: 8px;
+  right: 65px;
+  color: $color-main;
+}

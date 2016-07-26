@@ -1,0 +1,68 @@
+/**
+ *  If you want to override some bootstrap variables, you have to change values here.
+ *  The list of variables are listed here bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
+ */
+$icon-font-path: "../../bootstrap-sass/assets/fonts/bootstrap/";
+$fa-font-path: "../../bower_components/font-awesome/fonts";
+@import "../../bower_components/font-awesome/scss/font-awesome.scss";
+$color-main: grey;
+$color-main-dark: grey;
+$color-grey: #fff;
+
+/**
+ *  Do not remove the comments below. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+// bower:scss
+// endbower
+
+
+body { padding-top: 70px; }
+input[type='text']{
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  border-radius: 0;
+  width: 100px;
+  margin-top: 8px;
+  color: #fff;
+  &:hover, &:focus{
+    border-bottom: 1px solid #fff;
+  }
+  &:focus{
+    outline: none;
+  }
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #fff;
+  }
+  &::-moz-placeholder { /* Firefox 19+ */
+    color: #fff;
+  }
+  &:-ms-input-placeholder { /* IE 10+ */
+    color: #fff;
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+    color: #fff;
+  }
+}
+input[type='search']{
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #fff;
+  }
+  &::-moz-placeholder { /* Firefox 19+ */
+    color: #fff;
+  }
+  &:-ms-input-placeholder { /* IE 10+ */
+    color: #fff;
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+    color: #fff;
+  }
+}
+
+/**
+ *  Do not remove the comments below. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector
